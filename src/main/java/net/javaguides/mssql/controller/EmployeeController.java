@@ -5,10 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import jakarta.validation.Valid;
-<<<<<<< HEAD
-import net.javaguides.mssql.model.Alley;
-=======
->>>>>>> 45764eb (H2 db working code)
+//import net.javaguides.mssql.model.Alley;
 import net.javaguides.mssql.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.javaguides.mssql.exception.ResourceNotFoundException;
-<<<<<<< HEAD
-import net.javaguides.mssql.repository.AlleyRepository;
-=======
->>>>>>> 45764eb (H2 db working code)
+//import net.javaguides.mssql.repository.AlleyRepository;
+
 import net.javaguides.mssql.repository.EmployeeRepository;
 
 @RestController
@@ -35,33 +30,27 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
-<<<<<<< HEAD
-	@Autowired
-	private AlleyRepository alleyRepository;
+//	@Autowired
+//	private AlleyRepository alleyRepository;
 	
-=======
 //	@Autowired
 //	private AlleyRepository alleyRepository;
 //	
->>>>>>> 45764eb (H2 db working code)
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees() {
 		return employeeRepository.findAll();
 	}
 
-<<<<<<< HEAD
-	@CrossOrigin
-	@GetMapping("/alley")
-	public List<Alley> getalley() {
-		return alleyRepository.findAll();
-	}
-=======
 //	@CrossOrigin
 //	@GetMapping("/alley")
 //	public List<Alley> getalley() {
 //		return alleyRepository.findAll();
 //	}
->>>>>>> 45764eb (H2 db working code)
+//	@CrossOrigin
+//	@GetMapping("/alley")
+//	public List<Alley> getalley() {
+//		return alleyRepository.findAll();
+//	}
 	@GetMapping("/employees/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Long employeeId)
 			throws ResourceNotFoundException {
@@ -72,10 +61,7 @@ public class EmployeeController {
 
 	@PostMapping("/employees")
 	public Employee createEmployee(@Valid @RequestBody Employee employee) {
-<<<<<<< HEAD
-=======
 		System.out.println(employee.toString());
->>>>>>> 45764eb (H2 db working code)
 		return employeeRepository.save(employee);
 	}
 
